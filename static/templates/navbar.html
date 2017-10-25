@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="{% url "home" %}"><h2>Beacon</h2></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "aboutus" %}">
+              About Us
+            </a>
+          </li>
+        </ul>
+        
+        <ul class="nav navbar-nav navbar-right">
+          {% if not request.user.is_authenticated and not "/accounts/login" in request.get_full_path %}
+          
+          <li class="nav-item active">
+            <form class="navbar-form navbar-right form-inline" method="POST" action="{% url 'auth_login' %}">
+              {% csrf_token %}
+                <div class="form-group">
+                  <input type="text" class="form-control" name="username" placeholder="username"/>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="password" placeholder="password"/>
+                </div>
+                <button type="submit" class="btn btn-default">
+                  Login
+                </button>
+            </form>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'registration_register' %}">Register</a>
+          </li>
+          {% endif %}
+          {% if request.user.is_authenticated %}
+          <li class="nav-item active">
+            <a class="nav-link" href="">{{user}}</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'auth_logout' %}">Logout</a>
+          </li>
+
+          {% endif %}
+        </ul>
+      </div>
+    </nav>

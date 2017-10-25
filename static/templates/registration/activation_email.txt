@@ -1,0 +1,9 @@
+{% load i18n %}
+{% trans "Activate account at" %} {{ site.name }}:
+
+http://localhost:8000/accounts/activate/{% url 'registration_activate' activation_key %}
+
+http://{{ site.domain }}{% url 'registration_activate' activation_key %}
+
+
+{% blocktrans %}Link is valid for {{ expiration_days }} days.{% endblocktrans %}
