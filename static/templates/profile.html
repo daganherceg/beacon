@@ -20,31 +20,51 @@
 
     {% include 'navbar.html' %}
 
-    
-    {% block jumbotron %}
+    {% csrf_token %}
 
-    {% endblock %}
+    {% if request.user.is_authenticated %}
 
-    <div class="container">
-      {% if messages %}
-      <div class="row">
-        <div class="col-xs-12">
-          
-          {% for message in messages %}
-            <p {% if message.tags == "success" %} class="alert alert-success" {% endif %}> 
-              {{ message }}
-            </p>
-          {% endfor %}
-         
-        </div>
+      {% block jumbotron %}
+
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+          <div class="jumbotron">
+            <div class="container">
+              <h1 class="display-3">Hello, {{ user }}</h1>
+              <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+              <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+            </div>
+          </div>
+
+      {% endblock %}
+
+
+      {% block content %}  
+      <div class="col-sm-9">
+        <table class='table table-hover'>
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for query in queryset %}
+            <tr>
+               <td>{{ query.first_name }}</td>
+               <td>{{ query.last_name }}</td>
+               <td>{{ query.email }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
+      {% endblock %}
+
       {% endif %}
-      
-        <div class="row" style="align-self: center;">
-          {% block content %}
-          {% endblock %}
-        </div>
-     
+
+
         
 
       <hr>

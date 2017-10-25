@@ -23,8 +23,10 @@ urlpatterns = [
 	url(r'^$', 'signups.views.home', name='home'),
 	url(r'^thank-you', 'signups.views.thankyou', name='thankyou'),
 	url(r'^about-us', 'signups.views.aboutus', name='aboutus'),
+    url(r'^profile', 'signups.views.profile', name='profile'),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.default.urls')),
+    
 
 ]
 
