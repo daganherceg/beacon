@@ -22,6 +22,7 @@ $ source bin/activate
 (skillshare)$ pip install --upgrade django-registration
 (skillshare)$ pip install django-crispy-forms==1.7.0
 (skillshare)$ pip install django-registration-redux==1.8
+(skillshare)$ pip install djangorestframework==2.4.8
 ```
 
 3. Clone beacon from github repo
@@ -55,7 +56,7 @@ virtualenv-clone==0.2.6
 virtualenvwrapper==4.7.2
 ```
 
-$ python manage.py migrate   // syncronyses unmigrated apps to DB 
+$ python manage.py migrate   // syncronyses unmigrated apps to DB
 
 ### Your base directory should look like the following
 
