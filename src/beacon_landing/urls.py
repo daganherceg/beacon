@@ -17,7 +17,7 @@ from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from signups.models import SignUp
+from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 
 class SignUpSerializer(serializers.HyperlinkedModelSerializer):
@@ -37,6 +37,7 @@ urlpatterns = [
   url(r'^$', 'signups.views.home', name='home'),
 	url(r'^thank-you', 'signups.views.thankyou', name='thankyou'),
 	url(r'^about-us', 'signups.views.aboutus', name='aboutus'),
+    url(r'^profile', 'signups.views.profile', name='profile'),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.default.urls')),
   url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))

@@ -1,7 +1,7 @@
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
 from django.contrib import messages
 
-
+from .models import SignUp
 from .forms import SignUpForm
 
 # Create your views here.
@@ -27,3 +27,12 @@ def thankyou(request):
 def aboutus(request):
 	# form = SignUpForm(request.POST or None) # sends to server
 	return render(request, "aboutus.html", {})
+
+
+def profile(request):
+	# form = SignUpForm(request.POST or None) # sends to server
+	if request.user.is_authenticated():
+		context = {
+			"queryset": SignUp.objects.all()
+		}
+	return render(request, "profile.html", context)
