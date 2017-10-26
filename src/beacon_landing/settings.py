@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'registration',
     'crispy_forms',
     'signups',
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -157,3 +158,10 @@ LOGIN_REDIRECT_URL = '/'
 
 # CRISPY form tags
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+REST_FRAMEWORK = {
+  'DEFAULT_PERMISSION_CLASSES': [
+     # Standard permissions, or read only for unauthenticated users
+    'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+  ]
+}
