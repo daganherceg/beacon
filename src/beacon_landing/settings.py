@@ -162,6 +162,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 REST_FRAMEWORK = {
   'DEFAULT_PERMISSION_CLASSES': [
      # Standard permissions, or read only for unauthenticated users
-    'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
   ]
 }

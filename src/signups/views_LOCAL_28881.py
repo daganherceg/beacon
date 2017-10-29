@@ -36,12 +36,3 @@ def profile(request):
 			"queryset": User.objects.all()
 		}
 	return render(request, "profile.html", context)
-
-@api_view(['POST'])
-def register_user(request):
-  s = UserSerializer(data=request.DATA, context={'request': request})
-  if s.is_valid():
-    User.objects.create_user(s.init_data['email'], s.init_data['username'], s.init_data['password'])
-    return Response(s.data, status=status.HTTP_201_CREATED)
-  else:
-    return Response(s._errors, status=status.HTTP_400_BAD_REQUEST)

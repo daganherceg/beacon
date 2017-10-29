@@ -1,5 +1,11 @@
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.auth.models import User
+from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+from beacon_landing.urls import UserSerializer
 
 from .models import User
 from .forms import UserProfileRegistrationForm
@@ -13,15 +19,21 @@ def home(request):
 		save_it.save()
 		messages.success(request, 'Thank you for joining')
 		return HttpResponseRedirect('/thank-you')
-	return render_to_response("signup.html", 
-								locals(), 
+	return render_to_response("signup.html",
+								locals(),
 								context_instance=RequestContext(request))
 
 
 def thankyou(request):
+<<<<<<< HEAD
 	form = UserProfileRegistrationForm(request.POST or None) # sends to server
 	return render_to_response("thankyou.html", 
 							locals(), 
+=======
+	form = SignUpForm(request.POST or None) # sends to server
+	return render_to_response("thankyou.html",
+							locals(),
+>>>>>>> c6a5d7ba067a8d6577a3ebc4e60867dea9ad28d7
 							context_instance=RequestContext(request))
 
 def aboutus(request):
