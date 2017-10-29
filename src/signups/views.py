@@ -1,12 +1,12 @@
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
 from django.contrib import messages
 
-from .models import SignUp
-from .forms import SignUpForm
+from .models import User
+from .forms import UserProfileRegistrationForm
 
-# Create your views here.
+# Navbar Sign in
 def home(request):
-	form = SignUpForm(request.POST or None) # sends to server
+	form = UserProfileRegistrationForm(request.POST or None) # sends to server
 
 	if form.is_valid():
 		save_it = form.save(commit=False)
@@ -19,20 +19,20 @@ def home(request):
 
 
 def thankyou(request):
-	form = SignUpForm(request.POST or None) # sends to server
+	form = UserProfileRegistrationForm(request.POST or None) # sends to server
 	return render_to_response("thankyou.html", 
 							locals(), 
 							context_instance=RequestContext(request))
 
 def aboutus(request):
-	# form = SignUpForm(request.POST or None) # sends to server
+	# form = UserProfileRegistrationForm(request.POST or None) # sends to server
 	return render(request, "aboutus.html", {})
 
 
 def profile(request):
-	# form = SignUpForm(request.POST or None) # sends to server
+	# form = UserProfileRegistrationForm(request.POST or None) # sends to server
 	if request.user.is_authenticated():
 		context = {
-			"queryset": SignUp.objects.all()
+			"queryset": User.objects.all()
 		}
 	return render(request, "profile.html", context)

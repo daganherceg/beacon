@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import SignUp
+from .models import UserProfile
 
 # Register your models here.
-class SignUpAdmin(admin.ModelAdmin):
-	list_display = ["__unicode__", "first_name", "last_name", "timestamp"]
+class UserProfileAdmin(admin.ModelAdmin):
+	list_display = ["__unicode__", "first_name", "last_name"]
 	class Meta:
-		model = SignUp
+		model = UserProfile
 
 # the name of the entries
-admin.site.register(SignUp, SignUpAdmin)
+admin.site.register(UserProfile, UserProfileAdmin)
 

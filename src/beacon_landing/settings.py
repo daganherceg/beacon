@@ -49,9 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'signups',
     'registration',
     'crispy_forms',
-    'signups',
     'rest_framework',
 ]
 

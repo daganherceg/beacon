@@ -1,8 +1,8 @@
 from django import forms
+from registration.forms import RegistrationFormUniqueEmail
 
-from .models import SignUp
-
-class SignUpForm(forms.ModelForm):
-	class Meta:
-		model=SignUp
-		fields = '__all__'
+class UserProfileRegistrationForm(RegistrationFormUniqueEmail):
+    first_name = forms.CharField()
+    last_name = forms.CharField()
+    email = forms.EmailField()
+    image = forms.URLField();

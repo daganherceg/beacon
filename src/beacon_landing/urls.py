@@ -18,20 +18,21 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.models import User
-from signups.models import SignUp
+from signups.models import UserProfile
 from rest_framework import routers, serializers, viewsets
+from signups.regbackend import MyRegistrationView
 
-class SignUpSerializer(serializers.HyperlinkedModelSerializer):
+class UserProfileSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
-    model = SignUp
-    fields = ('first_name', 'last_name', 'email', 'timestamp', 'updated')
+    model = UserProfile
+    fields = ('first_name', 'last_name')
 
-class SignUpsViewSet(viewsets.ModelViewSet):
-  queryset = SignUp.objects.all()
-  serializer_class = SignUpSerializer
+class UserProfilesViewSet(viewsets.ModelViewSet):
+  queryset = UserProfile.objects.all()
+  serializer_class = UserProfileSerializer
 
 router = routers.DefaultRouter()
-router.register(r'signups', SignUpsViewSet)
+router.register(r'signups', UserProfilesViewSet)
 
 urlpatterns = [
 	url(r'^', include(router.urls)),
@@ -40,6 +41,7 @@ urlpatterns = [
 	url(r'^about-us', 'signups.views.aboutus', name='aboutus'),
   url(r'^profile', 'signups.views.profile', name='profile'),
   url(r'^admin/', admin.site.urls),
+  url(r'^accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),
   url(r'^accounts/', include('registration.backends.default.urls')),
   url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

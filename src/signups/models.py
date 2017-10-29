@@ -1,13 +1,13 @@
 from django.db import models
 from django.utils.encoding import smart_unicode
+from django.contrib.auth.models import User
 
-# Create your models here.
-# NOTE: SignUp is singular
-class SignUp(models.Model):
-	first_name = models.CharField(max_length=120, null=True, blank=True)
-	last_name = models.CharField(max_length=120, null=True, blank=True)
-	email = models.EmailField()
-	timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+# using user profile to extend the default user
+class UserProfile(models.Model):
+    first_name = models.CharField(max_length=120, null=True, blank=True)
+    last_name = models.CharField(max_length=120, null=True, blank=True)
+    image = models.URLField(max_length=500, blank=True, default='https://a3-images.myspacecdn.com/images03/1/240e42b5d9ce48a78983961e7fcb3c39/600x600.jpg')
+    user = models.OneToOneField(User)
 
-	def __unicode__(self):
-		return self.email
+  #   def __unicode__(self):
+		# return self.first_name
