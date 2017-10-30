@@ -50,7 +50,7 @@ def profile(request):
 		context = {
 			"queryset": User.objects.all()
 		}
-	return render(request, "profile.html", context)
+	return render(request, "beacon-7d6be9.webflow/profile.html", context)
 
 # @api_view(['POST'])
 # def register_user(request):
