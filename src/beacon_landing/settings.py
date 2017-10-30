@@ -141,6 +141,10 @@ STATIC_URL = '/static/'
 #     # equivalent to /Users/Dagan/Documents/skillshare/pyFun/skillshare/beacon_landing/templates
 #     ]
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
 # Works for local projects. Not production
 if DEBUG:
     MEDIA_URL = '/media/'

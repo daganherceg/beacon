@@ -14,9 +14,22 @@ def home(request):
 		save_it.save()
 		messages.success(request, 'Thank you for joining')
 		return HttpResponseRedirect('/thank-you')
+	return render_to_response("index.html", 
+								locals(), 
+								context_instance=RequestContext(request))
+
+def rest(request):
+	form = UserProfileRegistrationForm(request.POST or None) # sends to server
+
+	if form.is_valid():
+		save_it = form.save(commit=False)
+		save_it.save()
+		messages.success(request, 'Thank you for joining')
+		return HttpResponseRedirect('/thank-you')
 	return render_to_response("signup.html", 
 								locals(), 
 								context_instance=RequestContext(request))
+
 
 def create_quest(request):
     form = CreateQuestForm(request.POST or None) # sends to server
@@ -39,8 +52,13 @@ def thankyou(request):
 							context_instance=RequestContext(request))
 
 def aboutus(request):
-	# form = UserProfileRegistrationForm(request.POST or None) # sends to server
 	return render(request, "aboutus.html", {})
+
+def error_401(request):
+	return render(request, "401.html", {})
+
+def error_404(request):
+	return render(request, "404.html", {})
 
 
 def profile(request):
@@ -50,7 +68,7 @@ def profile(request):
 		context = {
 			"queryset": User.objects.all()
 		}
-	return render(request, "beacon-7d6be9.webflow/profile.html", context)
+	return render(request, "profile.html", context)
 
 # @api_view(['POST'])
 # def register_user(request):

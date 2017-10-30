@@ -23,7 +23,7 @@ class Quest(models.Model):
 	hero = models.OneToOneField(Hero)
 	beacon = models.OneToOneField(Beacon)
 	name = models.CharField(max_length=120, null=True, blank=True)
-	date = models.DateTimeField()
+	date = models.DateTimeField(null=True)
 	location = models.CharField(max_length=120, null=True, blank=True)
 	description = models.CharField(max_length=120, null=True, blank=True)
 

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com  -->
 <!--  Last Published: Thu Oct 26 2017 02:23:02 GMT+0000 (UTC)  -->
-<html data-wf-page="59f13bf4422cdf0001913222" data-wf-site="59e6c84db9e454000156df28">
+<html data-wf-page="59e6d794f0bf1f0001c98711" data-wf-site="59e6c84db9e454000156df28">
 <head>
   <meta charset="utf-8">
-  <title>Profile</title>
-  <meta content="Profile" property="og:title">
+  <title>PostQuest</title>
+  <meta content="PostQuest" property="og:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
-  <link href="css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/beacon-7d6be9.webflow.css" rel="stylesheet" type="text/css">
+  <link href="/static/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="/static/css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="/static/css/beacon-7d6be9.webflow.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
   <script type="text/javascript">WebFont.load({  google: {    families: ["Droid Sans:400,700"]  }});</script>
   <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
@@ -18,7 +18,7 @@
   <link href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon">
 </head>
-<body class="body-7">
+<body class="body">
   <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
     <div class="container-2 w-container"><a href="#" class="w-nav-brand"></a>
       <nav role="navigation" class="w-nav-menu"><a href="#" class="nav-link w-nav-link">Home</a><a href="#" class="nav-link-2 w-nav-link">About</a><a href="#" class="nav-link-3 w-nav-link">Profile</a></nav>
@@ -27,13 +27,18 @@
       </div>
     </div>
   </div>
-  <h1 class="heading-4">My Profile</h1>
-  <div class="w-row">
-    <div class="w-col w-col-4"><img src="/beacon-7d6be9.webflow/images/HeroThing.png" srcset="images/HeroThing-p-500.png 500w, images/HeroThing-p-800.png 800w, images/HeroThing-p-1080.png 1080w, images/HeroThing.png 1382w" sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 31vw, (max-width: 4318px) 32vw, 1382px" class="image-4"></div>
-    <div class="w-col w-col-8"></div>
+  <div class="text-block-3">Post a quest!</div>
+  <div class="form-block-3 w-form">
+    <form id="wf-form-Quest-Post" name="wf-form-Quest-Post" data-name="Quest Post" class="form"><input type="text" class="w-input" maxlength="256" name="QuestTitle" data-name="QuestTitle" placeholder="Enter the title of your quest" id="QuestTitle"><input type="text" class="text-field w-input" maxlength="256" name="QuestDescription" data-name="QuestDescription" placeholder="Enter the details of your quest" id="QuestDescription" required=""><input type="submit" value="Post quest!" data-wait="The beacons are being lit..." class="submit-button w-button"></form>
+    <div class="success-message w-form-done">
+      <div class="text-block-4">The beacons have been lit!</div>
+    </div>
+    <div class="error-message w-form-fail">
+      <div class="text-block-5">The wind is too strong to light the beacon! Please try again.</div>
+    </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
-  <script src="js/webflow.js" type="text/javascript"></script>
+  <script src="/static/js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
 </html>
