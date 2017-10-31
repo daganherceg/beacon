@@ -1,5 +1,7 @@
 # beacon readme
 
+## [Please view our wiki](https://github.com/daganherceg/beacon/wiki "Beacon Wiki")
+
 ### House keeping
 - Work on your own branch and consistently pull to ensure you are up to date
 
@@ -29,9 +31,9 @@ $ source bin/activate
 
 4. Install relevant packages
 I believe the following should install all uninstalled apps
+```python
 $ python manage.py syncdb  // similar to migrate but also allows the creation of a superuser
-
-If that doesn't work you will need the following:
+```
 
 ### Running project
 In your virtual environment folder (where manage.py is located), run the server
