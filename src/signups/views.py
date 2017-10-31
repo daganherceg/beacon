@@ -43,6 +43,9 @@ def profile(request):
 		}
 	return render(request, "profile.html", context)
 
+def quests(request):
+	return render_to_response("Quests.html", {'quest':'placeholder'},context_instance=RequestContext(request))
+
 @api_view(['POST'])
 def register_user(request):
   s = UserSerializer(data=request.DATA, context={'request': request})

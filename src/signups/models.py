@@ -11,3 +11,9 @@ class SignUp(models.Model):
 
 	def __unicode__(self):
 		return self.email
+
+class Quest(models.Model):
+	quest_id = models.IntegerField(default=0)
+	quest_name = models.CharField(max_length=120, null=True, blank=True)
+	quest_contents = models.CharField(max_length=200, null=True, blank=False)
+	quest_owner = models.ForeignKey('SignUp', on_delete=models.CASCADE)
