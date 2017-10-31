@@ -35,11 +35,10 @@ router = routers.DefaultRouter()
 router.register(r'signups', UserProfilesViewSet)
 
 urlpatterns = [
-	url(r'^', include(router.urls)),
-  url(r'^', 'signups.views.rest', name='rest'),
+	url(r'^rest', include(router.urls)),
+  url(r'^', 'signups.views.home', name='home'),
   url(r'^error_401', 'signups.views.error_401', name='error_401'),
   url(r'^error_404', 'signups.views.error_404', name='error_404'),
-  url(r'^home', 'signups.views.home', name='home'),
 	url(r'^thank-you', 'signups.views.thankyou', name='thankyou'),
 	url(r'^about-us', 'signups.views.aboutus', name='aboutus'),
   url(r'^profile', 'signups.views.profile', name='profile'),
