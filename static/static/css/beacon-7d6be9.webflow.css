@@ -602,3 +602,31 @@
   font-size: 20px;
 }
 
+.section {
+  height: 80%;
+}
+
+.body-8 {
+  background-image: -webkit-linear-gradient(270deg, #000 27%, #fff);
+  background-image: linear-gradient(180deg, #000 27%, #fff);
+}
+
+.unordered-list {
+  position: relative;
+  left: 20%;
+  width: 60%;
+}
+
+.text-block-19 {
+  position: relative;
+  left: 20%;
+  width: 60%;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  padding-bottom: 0px;
+  color: #ff7f27;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+

@@ -60,6 +60,31 @@ def error_401(request):
 def error_404(request):
 	return render(request, "404.html", {})
 
+def quest(request):
+    return render(request, "quest.html", {})
+
+def postquest(request):
+    return render(request, "postquest.html", {})
+
+def whoareyou(request):
+    return render(request, "whoareyou.html", {})
+
+def beaconlit(request):
+    return render(request, "beaconlit.html", {})
+
+def error(request):
+    return render(request, "error.html", {})
+
+def rateuser(request):
+    return render(request, "rateuser.html", {})
+
+def registeruser(request):
+    return render(request, "registeruser.html", {})
+
+def signup(request):
+    return render(request, "signup.html", {})
+
+
 
 def profile(request):
 	context = None;
