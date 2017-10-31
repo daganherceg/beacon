@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5aa143e-edf4-40ee-a7a6-add9669f786a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db.sqlite3" afterPath="$PROJECT_DIR$/src/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/beacon_landing/urls.py" afterPath="$PROJECT_DIR$/src/beacon_landing/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/signups/models.py" afterPath="$PROJECT_DIR$/src/signups/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/signups/views.py" afterPath="$PROJECT_DIR$/src/signups/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/templates/Quests.html" afterPath="$PROJECT_DIR$/static/templates/Quests.html" />
-    </list>
+    <list default="true" id="f5aa143e-edf4-40ee-a7a6-add9669f786a" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +24,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/signups/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+            <state relative-caret-position="675">
+              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding>
                 <element signature="e#0#93#0" expanded="true" />
               </folding>
@@ -69,10 +63,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/signups/views.py" />
         <option value="$PROJECT_DIR$/src/signups/models.py" />
         <option value="$PROJECT_DIR$/src/beacon_landing/urls.py" />
         <option value="$PROJECT_DIR$/static/templates/Quests.html" />
+        <option value="$PROJECT_DIR$/src/signups/views.py" />
       </list>
     </option>
   </component>
@@ -228,7 +222,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -345,8 +341,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/signups/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        <state relative-caret-position="675">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
             <element signature="e#0#93#0" expanded="true" />
           </folding>
