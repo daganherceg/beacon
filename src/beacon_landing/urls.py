@@ -45,7 +45,6 @@ urlpatterns = [
   url(r'^beaconlit', 'signups.views.beaconlit', name='beaconlit'),
   url(r'^error', 'signups.views.error', name='error'),
   url(r'^rateuser', 'signups.views.rateuser', name='rateuser'),
-  url(r'^registeruser', 'signups.views.registeruser', name='registeruser'),
   url(r'^signup', 'signups.views.signup', name='signup'),
 	url(r'^thank-you', 'signups.views.thankyou', name='thankyou'),
 	url(r'^about-us', 'signups.views.aboutus', name='aboutus'),
