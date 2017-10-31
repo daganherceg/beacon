@@ -21,7 +21,44 @@
   <div data-autoplay="true" data-loop="true" data-wf-ignore="true" data-poster-url="/static/videos/LOTR1080p-poster-00001.jpg" data-video-urls="/static/videos/LOTR1080p-transcode.webm,videos/LOTR1080p-transcode.mp4" class="background-video-2 w-background-video w-background-video-atom"><video autoplay="" loop="" style="background-image:url(&quot;/static/videos/LOTR1080p-poster-00001.jpg&quot;);" data-wf-ignore="true"><source src="/static/videos/LOTR1080p-transcode.webm" data-wf-ignore="true"><source src="/static/videos/LOTR1080p-transcode.mp4" data-wf-ignore="true"></video>
     <div class="text-block-2">Beacon</div>
     <div class="form-block w-form">
-      <form id="email-form" name="email-form" data-name="Email Form" class="form-2"><label for="name" class="field-label-4">Username:</label><input type="text" class="w-input" maxlength="256" name="name" data-name="Name" placeholder="Enter your username" id="name"><label for="password" class="field-label-3">Password:</label><input type="password" class="text-field-2 w-input" maxlength="256" name="password" data-name="password" placeholder="Enter your password" id="password" required=""><input type="submit" value="Submit" data-wait="Please wait..." class="submit-button-2 w-button"><a href="http://beacon-7d6be9.webflow.io/registeruser" class="link">Not a user? Click here to sign up.</a></form>
+      <form id="email-form" name="email-form" data-name="Email Form" class="form-2" method="POST" action="{% url 'auth_login' %}">
+        {% csrf_token %}
+        <label 
+            for="username" 
+            class="field-label-4">
+          Username:
+        </label>
+        <input 
+            type="text" 
+            class="w-input" 
+            maxlength="256" 
+            name="username" 
+            data-name="Name" 
+            placeholder="Enter your username"
+            id="username"
+            required>
+        <label 
+            for="password" 
+            class="field-label-3">
+          Password:</label>
+        <input 
+            type="password" 
+            class="text-field-2 w-input" 
+            maxlength="256" 
+            name="password" 
+            data-name="password" 
+            placeholder="Enter your password" 
+            id="password" required="">
+        <input 
+            type="submit" 
+            value="Submit" 
+            data-wait="Please wait..." 
+            class="submit-button-2 w-button">
+          <a href="http://beacon-7d6be9.webflow.io/registeruser" 
+              class="link">
+            Not a user? Click here to sign up.
+          </a>
+        </form>
       <div class="w-form-done">
         <div>Thank you! Your submission has been received!</div>
       </div>
